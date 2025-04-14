@@ -1,0 +1,335 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: url('/background.jpg') no-repeat center -200px / cover;
+  color: #111;
+}
+
+/* Navbar */
+.navbar {
+  background: transparent;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
+  flex: 2;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin-left: auto;
+}
+
+.menu li a {
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  color: #405FF2;
+}
+
+/* Nav Actions */
+.nav-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.sign-in, .submit-btn {
+  border: none;
+  border-radius: 25px;
+  padding: 8px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sign-in {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  margin-left: 20px;
+}
+
+.submit-btn {
+  background-color: white;
+  color: #405FF2;
+}
+
+/* Hero Section */
+.container {
+  text-align: center;
+  padding: 60px 20px 20px;
+  color: white;
+  position: relative;
+}
+
+.hero-content {
+  transform: translateY(70px);
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.tabs span {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 10px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.search-form {
+  margin: 30px auto;
+  background: white;
+  padding: 12px;
+  border-radius: 40px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 800px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+.search-form select {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 25px;
+  font-size: 14px;
+  min-width: 140px;
+}
+
+.search-button {
+  background-color: #405FF2;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 120px;
+}
+
+.browse-text {
+  margin-top: 30px;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.icon-button {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.icon-button:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Brands Section */
+.brands-section {
+  background: #ffffff;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding: 10px 0;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
+  margin-top: 80px;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: none;
+}
+
+.brands-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 10px;
+  padding: 0 20px;
+}
+
+.brands-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+}
+
+.brands-header a {
+  font-size: 13px;
+  color: #405FF2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  justify-items: center;
+}
+
+.brand-card {
+  background-color: #ffffff;
+  border-radius: 25px;
+  padding: 20px 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 130px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-card:hover {
+  transform: translateY(-5px);
+}
+
+.brand-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.brand-card img[alt="Mercedes Benz"] {
+  width: 100px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.brand-card p {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* زر الهامبرغر مكانه أعلى يمين */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Responsive: موبايل */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .logo {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+  }
+
+  .navbar {
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    gap: 15px;
+    z-index: 999;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px;
+    border-radius: 20px;
+    max-width: 90%;
+  }
+
+  .search-form select {
+    width: 100%;
+    min-width: unset;
+    margin-bottom: 10px;
+  }
+
+  .search-button {
+    width: 100%;
+    margin-left: 0;
+  }
+}
