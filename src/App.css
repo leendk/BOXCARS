@@ -265,7 +265,7 @@ body {
   overflow: hidden;
 }
 
-/* زر الهامبرغر مكانه أعلى يمين */
+/* زر الهامبرغر */
 .menu-toggle {
   display: none;
   position: absolute;
@@ -281,55 +281,69 @@ body {
 
 /* Responsive: موبايل */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
 
-  .logo {
-    position: absolute;
-    left: 20px;
-    top: 15px;
-  }
+    .navbar-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
 
-  .navbar {
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-  }
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-right: 40px; /* مسافة بين submit والهامبرغر */
+    }
 
-  .menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.95);
-    padding: 20px;
-    border-radius: 10px;
-    gap: 15px;
-    z-index: 999;
-  }
+    .menu-toggle {
+      display: block;
+      font-size: 26px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin-left: 20px; /* مسافة إضافية للهامبرغر */
+    }
 
-  .menu.show {
-    display: flex;
-  }
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.95);
+      padding: 20px;
+      border-radius: 10px;
+      gap: 15px;
+      z-index: 999;
+    }
 
-  .search-form {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 15px;
-    border-radius: 20px;
-    max-width: 90%;
-  }
+    .menu.show {
+      display: flex;
+    }
 
-  .search-form select {
-    width: 100%;
-    min-width: unset;
-    margin-bottom: 10px;
-  }
+    .search-form {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 15px;
+      border-radius: 20px;
+      max-width: 90%;
+    }
 
-  .search-button {
-    width: 100%;
-    margin-left: 0;
-  }
+    .search-form select {
+      width: 100%;
+      min-width: unset;
+      margin-bottom: 10px;
+    }
+
+    .search-button {
+      width: 100%;
+      margin-left: 0;
+    }
 }
