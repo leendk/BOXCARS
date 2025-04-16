@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -194,17 +193,20 @@ body {
 
 .brands-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto 10px;
   padding: 0 20px;
+  text-align: center; 
 }
 
 .brands-header h2 {
   font-size: 24px;
   font-weight: 700;
   color: #111;
+  margin-bottom: 10px; 
 }
 
 .brands-header a {
@@ -265,7 +267,7 @@ body {
   overflow: hidden;
 }
 
-/* زر الهامبرغر */
+
 .menu-toggle {
   display: none;
   position: absolute;
@@ -281,69 +283,69 @@ body {
 
 /* Responsive: موبايل */
 @media (max-width: 768px) {
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-    }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
 
-    .navbar-content {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
 
-    .nav-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      margin-right: 40px; /* مسافة بين submit والهامبرغر */
-    }
+  .nav-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-right: 40px; 
+  }
 
-    .menu-toggle {
-      display: block;
-      font-size: 26px;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-      margin-left: 20px; /* مسافة إضافية للهامبرغر */
-    }
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 20px; 
+  }
 
-    .menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background: rgba(0, 0, 0, 0.95);
-      padding: 20px;
-      border-radius: 10px;
-      gap: 15px;
-      z-index: 999;
-    }
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    gap: 15px;
+    z-index: 999;
+  }
 
-    .menu.show {
-      display: flex;
-    }
+  .menu.show {
+    display: flex;
+  }
 
-    .search-form {
-      flex-direction: column;
-      align-items: stretch;
-      padding: 15px;
-      border-radius: 20px;
-      max-width: 90%;
-    }
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px;
+    border-radius: 20px;
+    max-width: 90%;
+  }
 
-    .search-form select {
-      width: 100%;
-      min-width: unset;
-      margin-bottom: 10px;
-    }
+  .search-form select {
+    width: 100%;
+    min-width: unset;
+    margin-bottom: 10px;
+  }
 
-    .search-button {
-      width: 100%;
-      margin-left: 0;
-    }
+  .search-button {
+    width: 100%;
+    margin-left: 0;
+  }
 }
