@@ -1,0 +1,21 @@
+.brands-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 70px 10px 30px 160px;
+  padding: 0 20px;
+}
+
+.brands-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+}
+
+.brands-header a {
+  font-size: 13px;
+  color: #405ff2;
+  text-decoration: none;
+  font-weight: 500;
+}

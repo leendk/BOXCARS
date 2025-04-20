@@ -6,9 +6,12 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: url('/background.jpg') no-repeat center -200px / cover;
+  font-family: "Inter", sans-serif;
+  background: url("/background.jpg") no-repeat center top;
+  background-size: 100% 600px;
+  background-attachment: scroll;
   color: #111;
+  margin: 0;
 }
 
 /* Navbar */
@@ -55,7 +58,7 @@ body {
 }
 
 .menu li a:hover {
-  color: #405FF2;
+  color: #405ff2;
 }
 
 /* Nav Actions */
@@ -64,7 +67,8 @@ body {
   gap: 10px;
 }
 
-.sign-in, .submit-btn {
+.sign-in,
+.submit-btn {
   border: none;
   border-radius: 25px;
   padding: 8px 16px;
@@ -82,15 +86,15 @@ body {
 
 .submit-btn {
   background-color: white;
-  color: #405FF2;
+  color: #405ff2;
 }
 
 /* Hero Section */
 .container {
   text-align: center;
-  padding: 60px 20px 20px;
+  padding: 60px 20px 20px 20px;
   color: white;
-  position: relative;
+  /* position: relative; */
 }
 
 .hero-content {
@@ -126,7 +130,7 @@ body {
   gap: 10px;
   flex-wrap: wrap;
   max-width: 800px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
 }
 
 .search-form select {
@@ -138,7 +142,7 @@ body {
 }
 
 .search-button {
-  background-color: #405FF2;
+  background-color: #405ff2;
   color: white;
   border: none;
   padding: 10px 25px;
@@ -164,18 +168,19 @@ body {
 }
 
 .icon-button {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   padding: 8px 15px;
   border-radius: 25px;
   font-size: 13px;
-  cursor: pointer;
+  cursor: pointer !important;
+  z-index: 999999 !important;
   transition: background 0.3s;
 }
 
 .icon-button:hover {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* Brands Section */
@@ -190,28 +195,6 @@ body {
   z-index: 5;
   width: 100%;
   max-width: none;
-}
-
-.brands-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto 10px;
-  padding: 0 20px;
-}
-
-.brands-header h2 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #111;
-}
-
-.brands-header a {
-  font-size: 13px;
-  color: #405FF2;
-  text-decoration: none;
-  font-weight: 500;
 }
 
 .brands-grid {
@@ -265,6 +248,18 @@ body {
   overflow: hidden;
 }
 
+.Vt-parent {
+  margin: 70px 10px 30px 160px;
+}
+
+/* vehicles section (other css in component) */
+.VehiclesSection_parent {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 /* زر الهامبرغر مكانه أعلى يمين */
 .menu-toggle {
   display: none;
@@ -277,6 +272,13 @@ body {
   color: white;
   cursor: pointer;
   z-index: 1001;
+}
+
+/* for swiper */
+.swiper-pagination {
+  position: absolute !important;
+  bottom: -5px !important;
+  z-index: 9999 !important;
 }
 
 /* Responsive: موبايل */
@@ -331,5 +333,16 @@ body {
   .search-button {
     width: 100%;
     margin-left: 0;
+  }
+
+  /* swiper */
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
   }
 }

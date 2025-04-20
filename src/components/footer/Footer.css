@@ -1,0 +1,98 @@
+.footer {
+  background-color: #0c0f23;
+  color: #fff;
+  padding: 50px 30px 20px;
+  font-family: sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #333;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-newsletter h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer-subscribe {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-subscribe input {
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: none;
+  width: 250px;
+}
+
+.footer-subscribe button {
+  background-color: #3a4bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.app-btn {
+  display: block;
+  background-color: #1e253b;
+  color: white;
+  padding: 8px 12px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.social-icons span {
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #aaa;
+  flex-wrap: wrap;
+}
+
+.footer-policy span {
+  margin-left: 15px;
+  cursor: pointer;
+}
