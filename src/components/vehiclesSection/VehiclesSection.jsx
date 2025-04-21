@@ -16,39 +16,6 @@ function VehiclesSection() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      {/* <div className="VehicleCard">
-        <div
-          className="VehicleCard_Image"
-          style={{
-            backgroundImage: `url(${car1})`,
-          }}
-        />
-        <div className="VehicleCard_info">
-          <h3>Ford Transit – 2021</h3>
-          <span>4.0 D5 PowerPulse Momentum 5dr</span>
-          <div className="VehicleCard_info_options_parent">
-            <div className="VehicleCard_info_options_child">
-              <RiSpeedUpFill size={20} />
-              <span>2500 Miles</span>
-            </div>
-            <div className="VehicleCard_info_options_child">
-              <BsFuelPumpDiesel size={20} />
-              <span>2500 Miles</span>
-            </div>
-            <div className="VehicleCard_info_options_child">
-              <TbManualGearbox size={20} />
-              <span>2500 Miles</span>
-            </div>
-          </div>
-          <div className="VehicleCard_price_parent">
-            <h2>£18,995</h2>
-            <span className="VehicleCard_price_link">
-              View Details <MdOutlineArrowOutward />
-            </span>
-          </div>
-        </div>
-      </div> */}
-
       <Swiper
         slidesPerView={3}
         spaceBetween={30}

@@ -18,15 +18,9 @@ function Navbar() {
       </button>
       <ul className={`menu ${menuOpen ? "show" : ""}`}>
         <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Listings</a>
-        </li>
-        <li>
           <a href="#">Blog</a>
         </li>
-        <li>
+        <li style={{ cursor: "pointer" }}>
           <a onClick={() => setShowModal(true)}>Advertisements</a>
         </li>
         <li>

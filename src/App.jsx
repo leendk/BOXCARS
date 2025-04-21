@@ -5,6 +5,7 @@ import BrandsSection from "./componentsHome/BrandsSection";
 import "./App.css";
 import AboutSection from "./components/aboutsection/AboutSection";
 import Footer from "./components/footer/Footer";
+import SubscriptionPlans from "./components/subscriptionplanssection/SubscriptionPlansSection";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div className="container">
         <BrandsSection />
         <AboutSection />
+        <SubscriptionPlans />
 
         <Footer />
       </div>

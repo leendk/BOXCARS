@@ -214,9 +214,11 @@ export default function Modal({ step, setStep, onClose }) {
               </select>
             </>
           )}
-          <button type="submit" className="submit-btn">
-            {step === "login" ? "Login" : "Subscribe"}
-          </button>
+          <div className="submit-btn-parent">
+            <button type="submit" className="submit-btn marginCustom">
+              {step === "login" ? "Login" : "Subscribe"}
+            </button>
+          </div>
         </form>
       </div>
     </>

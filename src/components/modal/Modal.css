@@ -57,6 +57,21 @@
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s;
 }
+
+.marginCustom {
+  margin-block: 20px !important;
+  width: 100% !important;
+}
+
+.submit-btn-parent {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.modal::-webkit-scrollbar {
+  display: none !important;
+}
+
 .modal:hover {
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.15);
 }
