@@ -8,18 +8,16 @@ const CarModal = ({ isOpen, onClose }) => {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-modern" onClick={(e) => e.stopPropagation()}>
         <button className="close-button" onClick={onClose}>
-          ×
+          ✘
         </button>
 
-        {/* صورة السيارة */}
         <div
-          className="modal-image"
+          className="modal-image-car"
           style={{
             backgroundImage: `url(${imgCar})`,
           }}
         />
 
-        {/* معلومات السيارة */}
         <div className="modal-content">
           <h2 className="car-title">Range Rover Velar</h2>
 

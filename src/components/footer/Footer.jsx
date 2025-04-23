@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import "./Footer.css";
 import AddCarModal from "../addCarmodal/AddCarModal";
+import Modal from "../modal/Modal";
+import { FaFacebookSquare, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 function Footer() {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <footer className="footer">
-      {/* القسم العلوي: الاشتراك بالنشرة */}
       <div className="footer-top">
         <div className="footer-newsletter">
           <h2>Join BoxCar</h2>
@@ -15,13 +17,11 @@ function Footer() {
         </div>
         <div className="footer-subscribe">
           <input type="email" placeholder="Your email address" />
-          <button>Sign Up</button>
+          <button>send</button>
         </div>
       </div>
 
-      {/* القسم الرئيسي: الروابط */}
       <div className="footer-links">
-        {/* Company */}
         <div className="footer-column">
           <h4>Company</h4>
           <ul>
@@ -34,7 +34,6 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Quick Links */}
         <div className="footer-column">
           <h4>Quick Links</h4>
           <ul>
@@ -45,7 +44,6 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Brands */}
         <div className="footer-column">
           <h4>Our Brands</h4>
           <ul>
@@ -59,8 +57,6 @@ function Footer() {
             <li>Volkswagen</li>
           </ul>
         </div>
-
-        {/* Vehicles */}
         <div className="footer-column">
           <h4>Vehicles Type</h4>
           <ul>
@@ -75,7 +71,6 @@ function Footer() {
           </ul>
         </div>
 
-        {/* App Download */}
         <div className="footer-column">
           <h4>Our Mobile App</h4>
           <button onClick={() => setShowModal(true)} className="app-btn">
@@ -84,19 +79,25 @@ function Footer() {
           <button className="app-btn">Get it on Google Play</button>
         </div>
 
-        {/* Social */}
         <div className="footer-column">
           <h4>Connect With Us</h4>
           <div className="social-icons">
-            <span>🌐</span>
-            <span>📘</span>
-            <span>🐦</span>
-            <span>📸</span>
+            <span>
+              <FaInstagram size={26} />
+            </span>
+            <span>
+              <FaFacebookSquare color="blue" size={26} />
+            </span>
+            <span>
+              <FaSquareXTwitter size={26} />
+            </span>
+            <span>
+              <FaWhatsapp color="green" size={26} />
+            </span>
           </div>
         </div>
       </div>
 
-      {/* القسم السفلي */}
       <div className="footer-bottom">
         <p>© 2024 exemple.com. All rights reserved.</p>
         <div className="footer-policy">

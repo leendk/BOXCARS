@@ -86,7 +86,7 @@ body {
 
 .submit-btn {
   background-color: white;
-  color: #405ff2;
+  /* color: #405ff2; */
 }
 
 /* Hero Section */
@@ -220,6 +220,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .brand-card:hover {
@@ -432,7 +433,7 @@ body {
 /* for swiper */
 .swiper-pagination {
   position: absolute !important;
-  bottom: -5px !important;
+  bottom: 0px !important;
   z-index: 9999 !important;
 }
 
@@ -499,5 +500,28 @@ body {
     justify-content: center;
     align-items: center;
     width: 100% !important;
+  }
+
+  .brands-header {
+    margin: 0 !important;
+  }
+  .Vt-parent {
+    margin: 0 !important;
+  }
+  .tabs-container {
+    display: flex;
+    justify-content: center;
+  }
+  .footer-subscribe {
+    flex-direction: column;
+  }
+  .footer-newsletter {
+    margin-bottom: 10px;
+  }
+  .container {
+    padding: 60px 10px 10px 10px;
+  }
+  .modal-overlay-add-car {
+    width: 90vw !important;
   }
 }

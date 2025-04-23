@@ -8,6 +8,7 @@ function UploadFile({
   fileInputRef,
   handleRemoveImage,
   text,
+  styleBtn,
 }) {
   return (
     <>
@@ -38,6 +39,7 @@ function UploadFile({
             <button
               type="button"
               className="delete-icon"
+              style={styleBtn}
               onClick={handleRemoveImage}
             >
               &times;

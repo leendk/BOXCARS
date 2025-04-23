@@ -2,7 +2,7 @@ import React from "react";
 import TitleLink from "../components/titleLink/TitleLink";
 import ExploreSection from "./ExploreSection";
 
-function BrandsSection() {
+function BrandsSection({ brandsRef }) {
   const brands = [
     { src: "Audi.jpg", name: "Audi" },
     { src: "BMW.png", name: "BMW" },
@@ -27,7 +27,7 @@ function BrandsSection() {
             </div>
           ))}
         </div>
-        <ExploreSection />
+        <ExploreSection brandsRef={brandsRef} />
       </div>
     </section>
   );

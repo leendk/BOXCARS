@@ -3,12 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../components/modal/Modal";
 import AdTypeModal from "../components/adtypemodal/AdTypeModal";
+import AddCarModal from "../components/addCarmodal/AddCarModal";
 
-function Navbar() {
+function Navbar({ onSubscriptionClick, onAboutClick, onBrandsClick }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState("login");
   const [showModal, setShowModal] = useState(false);
+  const [showModalSell, setShowModalSell] = useState(false);
 
   return (
     <nav className="navbar">
@@ -17,13 +19,16 @@ function Navbar() {
         &#9776;
       </button>
       <ul className={`menu ${menuOpen ? "show" : ""}`}>
-        <li>
-          <a href="#">Blog</a>
+        <li onClick={onBrandsClick}>
+          <a href="#">Explore cars</a>
+        </li>
+        <li onClick={setShowModalSell}>
+          <a href="#">Sell car</a>
         </li>
         <li style={{ cursor: "pointer" }}>
           <a onClick={() => setShowModal(true)}>Advertisements</a>
         </li>
-        <li>
+        <li onClick={onAboutClick}>
           <a href="#">About</a>
         </li>
         <li>
@@ -34,7 +39,9 @@ function Navbar() {
         <button onClick={() => setIsOpen(true)} className="sign-in">
           <FontAwesomeIcon icon={faUser} /> Sign In
         </button>
-        <button className="submit-btn">Submit Listing</button>
+        <button onClick={onSubscriptionClick} className="submit-btn">
+          Subscription
+        </button>
       </div>
       {/* <div className="app-container"> */}
       {/* <button className="open-btn" >
@@ -45,6 +52,11 @@ function Navbar() {
       )}
       {/* </div> */}
       {showModal && <AdTypeModal onClose={() => setShowModal(false)} />}
+
+      <AddCarModal
+        isOpen={showModalSell}
+        onClose={() => setShowModalSell(false)}
+      />
     </nav>
   );
 }

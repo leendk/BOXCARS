@@ -1,17 +1,48 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./AddCarModal.css";
-
+import carSell from "../../../public/background.jpg";
+import UploadFile from "../uploadFile/UploadFile";
 const AddCarModal = ({ isOpen, onClose }) => {
+  const [uploading, setUploading] = useState(false);
+  const fileInputRef = useRef(null);
+  const [previewUrl, setPreviewUrl] = useState(null);
+  const [formValues, setFormValues] = useState({
+    image: null,
+  });
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    setUploading(true);
+    setFormValues((prev) => ({ ...prev, image: file }));
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setPreviewUrl(reader.result);
+      setUploading(false);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleRemoveImage = () => {
+    setPreviewUrl(null);
+    setFormValues((prev) => ({ ...prev, image: null }));
+    if (fileInputRef.current) fileInputRef.current.value = null;
+  };
   if (!isOpen) return null;
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay-add-car">
       <div className="modal-content">
-        <button className="close-btn" onClick={onClose}>
+        <button className="close-btn-add-car" onClick={onClose}>
           ×
         </button>
         <div className="modal-header">
-          <img src="/car-placeholder.png" alt="Car" className="modal-image" />
+          <img
+            alt="Car"
+            className="draweer-img-car"
+            style={{
+              backgroundImage: `url(${carSell})`,
+            }}
+          />
           <h2>Add a New Car</h2>
         </div>
 
@@ -34,10 +65,23 @@ const AddCarModal = ({ isOpen, onClose }) => {
             <option>Coupe</option>
           </select>
 
+          <UploadFile
+            previewUrl={previewUrl}
+            uploading={uploading}
+            formValues={formValues}
+            handleFileChange={handleFileChange}
+            fileInputRef={fileInputRef}
+            handleRemoveImage={handleRemoveImage}
+            text={"Car Image"}
+            styleBtn={{
+              color: "#fff",
+            }}
+          />
+
           <label>Description</label>
           <textarea placeholder="Write a brief description..."></textarea>
 
-          <button type="submit" className="submit-btn">
+          <button onClick={onClose} className="submit-btn">
             Submit Car
           </button>
         </form>

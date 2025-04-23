@@ -3,13 +3,13 @@ import TitleLink from "../components/titleLink/TitleLink";
 import VehiclesSection from "../components/vehiclesSection/VehiclesSection";
 import Tabs from "../components/tabs/Tabs";
 
-function ExploreSection() {
+function ExploreSection({ brandsRef }) {
   return (
     <>
       <TitleLink title="Explore All Vehicles" linkTitle="View All" />
       <div className="Vt-parent">
         <Tabs />
-        <div className="VehiclesSection_parent">
+        <div ref={brandsRef} className="VehiclesSection_parent">
           <VehiclesSection />
         </div>
       </div>
