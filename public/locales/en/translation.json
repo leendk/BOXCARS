@@ -1,0 +1,210 @@
+{
+  "navbar": {
+    "exploreCars": "Explore cars",
+    "sellCar": "Sell car",
+    "advertisements": "Advertisements",
+    "about": "About",
+    "contact": "Contact",
+    "signIn": "Sign In",
+    "subscription": "Subscription"
+  },
+  "hero": {
+    "subtitle": "Find cars for sale and for rent near you",
+    "title": "Find Your Perfect Car",
+    "tabs": {
+      "all": "All",
+      "new": "New",
+      "used": "Used"
+    },
+    "searchCars": "Search Cars",
+    "browseFeatured": "Or Browse Featured Models",
+    "filters": {
+      "anyMakes": "Any Makes",
+      "anyModels": "Any Models",
+      "allPrices": "Prices: All Prices"
+    },
+    "icons": {
+      "suv": "SUV",
+      "sedan": "Sedan",
+      "hatchback": "Hatchback",
+      "coupe": "Coupe",
+      "hybrid": "Hybrid"
+    }
+  },
+  "brands": {
+    "title": "Explore Our Premium Brands",
+    "showAll": "Show All Brands"
+  },
+  "about": {
+    "title1": "Get A Fair Price For Your Car",
+    "title2": "Sell To Us Today",
+    "desc": "We are committed to providing our customers with exceptional service, competitive pricing, and a wide range of:",
+    "list": [
+      "We are the UK's largest provider, with more patrols in more places",
+      "You get 24/7 roadside assistance",
+      "We fix 4 out of 5 cars at the roadside"
+    ],
+    "cta": "Get Started ↗"
+  },
+  "stats": {
+    "carsForSale": "Cars For Sale",
+    "dealerReviews": "Dealer Reviews",
+    "visitorsPerDay": "Visitors Per Day",
+    "verifiedDealers": "Verified Dealers",
+    "values": {
+      "carsForSale": "836M",
+      "dealerReviews": "738M",
+      "visitorsPerDay": "100M",
+      "verifiedDealers": "238M"
+    }
+  },
+  "subscriptionPlans": {
+    "title": "Subscription Plans",
+    "controls": {
+      "paymentMethod": "Payment Method",
+      "options": ["Syriatel Cash", "MTN", "Bank Account"],
+      "duration": "Subscription Duration",
+      "durations": ["Daily", "Weekly", "Monthly", "Yearly"]
+    },
+    "plans": {
+      "free": {
+        "name": "Free",
+        "price": "$0",
+        "features": ["Display 1 or 2 cars", "Limited Duration (One week)"]
+      },
+      "basic": {
+        "name": "Basic",
+        "price": "$10",
+        "features": ["Display 1–3 cars", "Low cost"]
+      },
+      "premium": {
+        "name": "Premium",
+        "price": "$30",
+        "features": ["Display 4–10 cars", "Faster support"]
+      },
+      "professional": {
+        "name": "Professional",
+        "price": "$45",
+        "features": ["Unlimited car display", "Best features & support"]
+      },
+      "button": "Start Now"
+    }
+  },
+  "footer": {
+    "columns": {
+      "company": {
+        "title": "Company",
+        "items": ["About Us", "Blog", "Services", "FAQs", "Terms", "Contact Us"]
+      },
+      "quickLinks": {
+        "title": "Quick Links",
+        "items": ["Get in Touch", "Help center", "Live chat", "How it works"]
+      },
+      "ourBrands": {
+        "title": "Our Brands",
+        "items": ["Toyota", "Porsche", "Audi", "BMW", "Ford", "Nissan", "Peugeot", "Volkswagen"]
+      },
+      "vehicleType": {
+        "title": "Vehicles Type",
+        "items": ["Sedan", "Hatchback", "SUV", "Hybrid", "Electric", "Coupe", "Truck", "Convertible"]
+      },
+      "mobileApp": {
+        "title": "Our Mobile App",
+        "apple": "Download on the Apple Store",
+        "google": "Get it on Google Play"
+      },
+      "connect": {
+        "title": "Connect With Us"
+      }
+    },
+    "bottom": {
+      "text": "© 2024 exemple.com. All rights reserved.",
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Notice"
+    },
+    "join": "Join BoxCar",
+    "subscribeText": "Receive pricing updates, shopping tips & more!",
+    "newsletterPlaceholder": "Your email address",
+    "send": "send"
+  },
+  "explore": {
+    "title": "Explore All Vehicles",
+    "linkTitle": "View All"
+  },
+  "vehicles": {
+    "greatPrice": "Great Price",
+    "lowMileage": "Low Mileage",
+    "carTitle": "Ford Transit – 2021",
+    "carDescription": "4.0 D5 PowerPulse Momentum 5dr PowerPulse PowerPulse PowerPulse",
+    "mileage": "2500 Miles",
+    "price": "£18,995",
+    "viewDetails": "View Details"
+  },
+  "addCarModal": {
+    "header": "Add a New Car",
+    "fields": {
+      "carName": "Car Name",
+      "brand": "Brand",
+      "price": "Price ($)",
+      "category": "Category",
+      "selectCategory": "Select Category",
+      "carImage": "Car Image",
+      "description": "Description"
+    },
+    "placeholders": {
+      "name": "e.g. Mustang GT",
+      "brand": "e.g. Ford",
+      "price": "e.g. 30000",
+      "description": "Write a brief description..."
+    },
+    "submit": "Submit Car"
+  },
+  "uploadFile": {
+    "chooseImage": "Choose Image",
+    "profileImage": "Profile Image"
+  },
+  "carModal": {
+    "fields": {
+      "owner": "Owner",
+      "price": "Price",
+      "brand": "Brand",
+      "category": "Category",
+      "fuelType": "Fuel Type",
+      "transmission": "Transmission",
+      "mileage": "Mileage",
+      "color": "Color"
+    }
+  },
+  "modal": {
+    "tabs": {
+      "register": "Subscribe",
+      "login": "Login"
+    },
+    "fields": {
+      "email": "Email",
+      "password": "Password",
+      "fullName": "Full Name",
+      "phone": "Phone Number",
+      "city": "City",
+      "country": "Country",
+      "role": "Role"
+    },
+    "roles": {
+      "buyer": "Buyer",
+      "seller": "Seller"
+    },
+    "submit": {
+      "login": "Login",
+      "register": "Subscribe"
+    }
+  },
+  "adTypeModal": {
+    "title": "Choose Ad Type",
+    "options": {
+      "car": "Post a Car for Sale or Rent",
+      "realEstate": "Post Real Estate (Coming Soon)",
+      "device": "Post a Device (Coming Soon)",
+      "services": "Post Product or Services (Coming Soon)"
+    }
+  }
+}

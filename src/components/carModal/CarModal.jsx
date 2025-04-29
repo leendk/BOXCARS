@@ -1,7 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./CarModal.css";
 import imgCar from "../../../public/background.jpg";
+
 const CarModal = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
+
   if (!isOpen) return null;
 
   return (
@@ -23,42 +27,42 @@ const CarModal = ({ isOpen, onClose }) => {
 
           <div className="info-grid">
             <div className="info-box">
-              <span className="label">المالك</span>
+              <span className="label">{t("carModal.fields.owner")}</span>
               <span className="value">محمد الأحمد</span>
             </div>
 
             <div className="info-box">
-              <span className="label">السعر</span>
+              <span className="label">{t("carModal.fields.price")}</span>
               <span className="value">$98,000</span>
             </div>
 
             <div className="info-box">
-              <span className="label">الماركة</span>
+              <span className="label">{t("carModal.fields.brand")}</span>
               <span className="value">Land Rover</span>
             </div>
 
             <div className="info-box">
-              <span className="label">الفئة</span>
+              <span className="label">{t("carModal.fields.category")}</span>
               <span className="value">SUV</span>
             </div>
 
             <div className="info-box">
-              <span className="label">نوع الوقود</span>
+              <span className="label">{t("carModal.fields.fuelType")}</span>
               <span className="value">ديزل</span>
             </div>
 
             <div className="info-box">
-              <span className="label">ناقل الحركة</span>
+              <span className="label">{t("carModal.fields.transmission")}</span>
               <span className="value">أوتوماتيك</span>
             </div>
 
             <div className="info-box">
-              <span className="label">عدد الكيلومترات</span>
+              <span className="label">{t("carModal.fields.mileage")}</span>
               <span className="value">30,000 كم</span>
             </div>
 
             <div className="info-box">
-              <span className="label">اللون</span>
+              <span className="label">{t("carModal.fields.color")}</span>
               <span className="value">أسود</span>
             </div>
           </div>

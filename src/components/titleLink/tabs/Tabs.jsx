@@ -1,11 +1,12 @@
-import React from "react";
-
 function Tabs() {
+  const { t } = useTranslation();
+  const tabs = t("tabsComponent.items", { returnObjects: true });
+
   return (
-    <>
-      <span>In Stock</span>
-    </>
+    <div className="tabs">
+      {tabs.map((tab, index) => (
+        <span key={index}>{tab}</span>
+      ))}
+    </div>
   );
 }
-
-export default Tabs;

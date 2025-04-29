@@ -4,7 +4,10 @@
   border: 1px solid #e9e9e9;
   border-radius: 16px;
   position: relative;
+  /* إضافة دعم للـ RTL */
+  text-align: left;
 }
+
 .VehicleCard_Image {
   background-color: black;
   width: 100%;
@@ -22,19 +25,24 @@
   text-align: start;
   color: #050b20;
   margin: 20px;
+  /* إضافة دعم للـ RTL */
+  text-align: left;
 }
+
 .VehicleCard_info span {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .VehicleCard_info_options_parent {
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #e9e9e9;
   border-bottom: 1px solid #e9e9e9;
 }
+
 .VehicleCard_info_options_child {
   display: flex;
   flex-direction: column;
@@ -42,15 +50,20 @@
   margin-block: 10px;
   justify-content: center;
   align-items: center;
+  /* إضافة دعم للـ RTL */
+  text-align: left;
 }
+
 .VehicleCard_price_parent {
   display: flex;
   justify-content: space-between;
 }
+
 .VehicleCard_price_parent span {
   color: #405ff2;
   font-weight: 600;
 }
+
 .VehicleCard_price_link {
   display: flex;
   justify-content: end;
@@ -59,11 +72,30 @@
   cursor: pointer;
 }
 
-/* swiper */
+/* دعم للـ RTL */
+[dir="rtl"] .VehicleCard_info {
+  text-align: right; /* نصوص متجهة لليمين */
+}
 
+[dir="rtl"] .VehicleCard_info_options_parent {
+  flex-direction: row-reverse; /* التراصف من اليمين لليسار */
+}
+
+[dir="rtl"] .VehicleCard_save {
+  left: unset;
+  right: 20px;
+}
+
+[dir="rtl"] .VehicleCard_positionlity {
+  left: unset;
+  right: 20px;
+}
+
+/* swiper */
 .swiper {
   width: 100%;
   height: 100%;
+  overflow: hidden; /* يمنع ظهور أي مساحة فارغة */
 }
 
 .swiper-slide {
@@ -72,9 +104,10 @@
   background: #fff;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 350px !important;
+  align-items: flex-start;
+  width: 328px !important; /* تأكد من أن الكارد لا يأخذ مساحة إضافية */
 }
+
 .VehicleCard_positionlity {
   width: 130px;
   height: 30px;
@@ -86,6 +119,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .VehicleCard_save {
   width: 36px;
   height: 36px;

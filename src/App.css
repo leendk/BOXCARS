@@ -1,3 +1,54 @@
+/* Language Selector Styles */
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 2px solid #d0d7e2; 
+  background: #f1f5f9; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #1f2937;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px); 
+}
+
+.lang-btn:hover {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+
+.lang-btn:active {
+  transform: translateY(0);
+  background: #dbeafe;
+}
+
+
+.globe-icon {
+  font-size: 1.4em;
+  color: #3b82f6; 
+  background: transparent; 
+  padding: 0; 
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.lang-btn:hover .globe-icon {
+  transform: rotate(15deg);
+}
+.lang-text {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1e293b;
+  transition: opacity 0.3s ease;
+}
+
+.lang-btn:hover .lang-text {
+  opacity: 0.85;
+}
+
+
+
 /* Reset */
 * {
   margin: 0;

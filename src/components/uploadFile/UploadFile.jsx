@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 function UploadFile({
   previewUrl,
@@ -10,9 +11,11 @@ function UploadFile({
   text,
   styleBtn,
 }) {
+  const { t } = useTranslation();
+
   return (
     <>
-      <label>{text || "Profile Image"}</label>
+      <label>{text || t("uploadFile.profileImage")}</label>
       <div className="upload-container">
         {!previewUrl ? (
           <>
@@ -29,7 +32,11 @@ function UploadFile({
               className={uploading ? "upload-btn loading" : "upload-btn"}
             >
               {uploading && <div className="spinner" />}
-              <span>{uploading ? "Loading..." : "Choose Image"}</span>
+              <span>
+                {uploading
+                  ? t("uploadFile.loading")
+                  : t("uploadFile.chooseImage")}
+              </span>
             </label>
           </>
         ) : (

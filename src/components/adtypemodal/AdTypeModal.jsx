@@ -1,5 +1,6 @@
 // AdTypeModal.jsx
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./AdTypeModal.css";
 import {
   FaCar,
@@ -11,6 +12,7 @@ import {
 import UploadFile from "../uploadFile/UploadFile";
 
 const AdTypeModal = ({ onClose }) => {
+  const { t } = useTranslation();
   const [selectedType, setSelectedType] = useState(null);
 
   const handleSelect = (type) => {
@@ -25,7 +27,7 @@ const AdTypeModal = ({ onClose }) => {
           <FaTimes />
         </button>
 
-        <h2 className="modal-title">Choose Ad Type</h2>
+        <h2 className="modal-title">{t("adTypeModal.title")}</h2>
 
         <div className="ad-type-options">
           <div
@@ -33,34 +35,26 @@ const AdTypeModal = ({ onClose }) => {
             className={`ad-option ${selectedType === "car" ? "active" : ""}`}
             onClick={() => handleSelect("car")}
           >
-            <span>Post a Car for Sale or Rent</span>
+            <span>{t("adTypeModal.options.car")}</span>
             <FaCar />
           </div>
 
           {selectedType === "car" ? (
-            <UploadFile
-              text={"Car Image"}
-              //   previewUrl={previewUrl}
-              //   uploading={uploading}
-              //   formValues={formValues}
-              //   handleFileChange={handleFileChange}
-              //   fileInputRef={fileInputRef}
-              //   handleRemoveImage={handleRemoveImage}
-            />
+            <UploadFile text={t("addCarModal.fields.carImage")} />
           ) : (
             <>
               <div style={{ cursor: "not-allowed" }} className="ad-option">
-                <span>Post Real Estate (Coming Soon)</span>
+                <span>{t("adTypeModal.options.realEstate")}</span>
                 <FaHome />
               </div>
 
               <div style={{ cursor: "not-allowed" }} className="ad-option">
-                <span>Post a Device (Coming Soon)</span>
+                <span>{t("adTypeModal.options.device")}</span>
                 <FaMobileAlt />
               </div>
 
               <div style={{ cursor: "not-allowed" }} className="ad-option">
-                <span>Post Product or Services (Coming Soon)</span>
+                <span>{t("adTypeModal.options.services")}</span>
                 <FaEllipsisH />
               </div>
             </>

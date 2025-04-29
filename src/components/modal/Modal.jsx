@@ -1,11 +1,13 @@
-// src/components/modal/Modal.js
 import React, { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./Modal.css";
 import UploadFile from "../uploadFile/UploadFile";
 
 const API_BASE = "http://127.0.0.1:8000/api";
 
 export default function Modal({ step, setStep, onClose }) {
+  const { t } = useTranslation();
+
   const fileInputRef = useRef(null);
   const [formValues, setFormValues] = useState({
     email: "",
@@ -17,6 +19,7 @@ export default function Modal({ step, setStep, onClose }) {
     role: "buyer",
     image: null,
   });
+
   const [uploading, setUploading] = useState(false);
   const [previewUrl, setPreviewUrl] = useState(null);
 
@@ -74,12 +77,10 @@ export default function Modal({ step, setStep, onClose }) {
           console.log("Login successful:", data);
           onClose();
         } else {
-          console.error("Login failed:", data);
-          alert(data.message || "Login failed.");
+          alert(data.message || t("modal.error.loginFail"));
         }
       } catch (error) {
-        console.error("Login error:", error);
-        alert("Something went wrong during login.");
+        alert(t("modal.error.loginError"));
       }
       return;
     }
@@ -111,12 +112,10 @@ export default function Modal({ step, setStep, onClose }) {
         console.log("Registration successful:", data);
         onClose();
       } else {
-        console.error("Registration failed:", data);
-        alert(data.message || "Registration failed.");
+        alert(data.message || t("modal.error.registerFail"));
       }
     } catch (error) {
-      console.error("Request failed:", error);
-      alert("Something went wrong while registering.");
+      alert(t("modal.error.registerError"));
     }
   };
 
@@ -134,14 +133,14 @@ export default function Modal({ step, setStep, onClose }) {
               className={step === tabKey ? "tab active" : "tab"}
               onClick={() => setStep(tabKey)}
             >
-              {tabKey === "register" ? "Subscribe" : "Login"}
+              {t(`modal.tabs.${tabKey}`)}
             </div>
           ))}
         </div>
         <form onSubmit={handleSubmit}>
           {(step === "login" || step === "register") && (
             <>
-              <label>Email</label>
+              <label>{t("modal.fields.email")}</label>
               <input
                 type="email"
                 name="email"
@@ -149,7 +148,7 @@ export default function Modal({ step, setStep, onClose }) {
                 onChange={handleChange}
                 required
               />
-              <label>Password</label>
+              <label>{t("modal.fields.password")}</label>
               <input
                 type="password"
                 name="password"
@@ -162,7 +161,7 @@ export default function Modal({ step, setStep, onClose }) {
           )}
           {step === "register" && (
             <>
-              <label>Full Name</label>
+              <label>{t("modal.fields.fullName")}</label>
               <input
                 type="text"
                 name="fullName"
@@ -170,13 +169,12 @@ export default function Modal({ step, setStep, onClose }) {
                 onChange={handleChange}
                 required
               />
-              <label>Phone Number</label>
+              <label>{t("modal.fields.phone")}</label>
               <input
                 type="tel"
                 name="phone"
                 value={formValues.phone}
                 onChange={handleChange}
-                // pattern="\\d+"
                 required
               />
               <UploadFile
@@ -187,7 +185,7 @@ export default function Modal({ step, setStep, onClose }) {
                 fileInputRef={fileInputRef}
                 handleRemoveImage={handleRemoveImage}
               />
-              <label>City</label>
+              <label>{t("modal.fields.city")}</label>
               <input
                 type="text"
                 name="city"
@@ -195,7 +193,7 @@ export default function Modal({ step, setStep, onClose }) {
                 onChange={handleChange}
                 required
               />
-              <label>Country</label>
+              <label>{t("modal.fields.country")}</label>
               <input
                 type="text"
                 name="country"
@@ -203,20 +201,22 @@ export default function Modal({ step, setStep, onClose }) {
                 onChange={handleChange}
                 required
               />
-              <label>Role</label>
+              <label>{t("modal.fields.role")}</label>
               <select
                 name="role"
                 value={formValues.role}
                 onChange={handleChange}
               >
-                <option value="buyer">Buyer</option>
-                <option value="seller">Seller</option>
+                <option value="buyer">{t("modal.roles.buyer")}</option>
+                <option value="seller">{t("modal.roles.seller")}</option>
               </select>
             </>
           )}
           <div className="submit-btn-parent">
             <button type="submit" className="submit-btn marginCustom">
-              {step === "login" ? "Login" : "Subscribe"}
+              {step === "login"
+                ? t("modal.submit.login")
+                : t("modal.submit.register")}
             </button>
           </div>
         </form>

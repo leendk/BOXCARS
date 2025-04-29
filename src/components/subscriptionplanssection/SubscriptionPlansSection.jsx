@@ -1,55 +1,59 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./SubscriptionPlansSection.css";
+
 const SubscriptionPlans = () => {
-  // تعريف الحالة الخاصة بالخطة النشطة
+  const { t } = useTranslation();
   const [activePlan, setActivePlan] = useState(null);
 
-  // تعريف الخطط المتاحة
   const plans = [
     {
-      name: "Free",
-      price: "$0",
-      features: ["Display 1 or 2 cars", "Limited Duration (One week)"],
+      key: "free",
+      name: t("subscriptionPlans.plans.free.name"),
+      price: t("subscriptionPlans.plans.free.price"),
+      features: t("subscriptionPlans.plans.free.features", { returnObjects: true }),
     },
     {
-      name: "Basic",
-      price: "$10",
-      features: ["Display 1–3 cars", "Low cost"],
+      key: "basic",
+      name: t("subscriptionPlans.plans.basic.name"),
+      price: t("subscriptionPlans.plans.basic.price"),
+      features: t("subscriptionPlans.plans.basic.features", { returnObjects: true }),
     },
     {
-      name: "Premium",
-      price: "$30",
-      features: ["Display 4–10 cars", "Faster support"],
+      key: "premium",
+      name: t("subscriptionPlans.plans.premium.name"),
+      price: t("subscriptionPlans.plans.premium.price"),
+      features: t("subscriptionPlans.plans.premium.features", { returnObjects: true }),
     },
     {
-      name: "Professional",
-      price: "$45",
-      features: ["Unlimited car display", "Best features & support"],
+      key: "professional",
+      name: t("subscriptionPlans.plans.professional.name"),
+      price: t("subscriptionPlans.plans.professional.price"),
+      features: t("subscriptionPlans.plans.professional.features", { returnObjects: true }),
     },
   ];
 
-  // تغيير الخطة النشطة عند النقر
-  const handlePlanClick = (planName) => {
-    setActivePlan(planName);
+  const handlePlanClick = (planKey) => {
+    setActivePlan(planKey);
   };
 
   return (
     <section className="subscription-plans" id="Subscription">
-      <h1>Subscription Plans</h1>
+      <h1>{t("subscriptionPlans.title")}</h1>
 
       <div className="controls">
-        <span className="pill">Payment Method</span>
+        <span className="pill">{t("subscriptionPlans.controls.paymentMethod")}</span>
         <select id="payment">
-          <option>Syriatel Cash</option>
-          <option>MTN</option>
-          <option>Bank Account</option>
+          {t("subscriptionPlans.controls.options", { returnObjects: true }).map((option, index) => (
+            <option key={index}>{option}</option>
+          ))}
         </select>
-        <span className="pill">Subscription Duration</span>
+
+        <span className="pill">{t("subscriptionPlans.controls.duration")}</span>
         <select id="duration">
-          <option>Daily</option>
-          <option>Weekly</option>
-          <option selected>Monthly</option>
-          <option>Yearly</option>
+          {t("subscriptionPlans.controls.durations", { returnObjects: true }).map((option, index) => (
+            <option key={index}>{option}</option>
+          ))}
         </select>
       </div>
 
@@ -57,9 +61,9 @@ const SubscriptionPlans = () => {
         <div className="plans">
           {plans.map((plan) => (
             <div
-              key={plan.name}
-              className={`plan ${activePlan === plan.name ? "active" : ""}`}
-              onClick={() => handlePlanClick(plan.name)}
+              key={plan.key}
+              className={`plan ${activePlan === plan.key ? "active" : ""}`}
+              onClick={() => handlePlanClick(plan.key)}
             >
               <h2>{plan.name}</h2>
               <div className="price">{plan.price}</div>
@@ -70,7 +74,7 @@ const SubscriptionPlans = () => {
                   </li>
                 ))}
               </ul>
-              <button className="btn">Start Now</button>
+              <button className="btn">{t("subscriptionPlans.plans.button")}</button>
             </div>
           ))}
         </div>

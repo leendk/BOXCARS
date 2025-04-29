@@ -1,8 +1,12 @@
+
 import React from "react";
+import { useTranslation } from "react-i18next";
 import TitleLink from "../components/titleLink/TitleLink";
 import ExploreSection from "./ExploreSection";
 
 function BrandsSection({ brandsRef }) {
+  const { t } = useTranslation();
+
   const brands = [
     { src: "Audi.jpg", name: "Audi" },
     { src: "BMW.png", name: "BMW" },
@@ -16,8 +20,8 @@ function BrandsSection({ brandsRef }) {
     <section className="brands-section">
       <div>
         <TitleLink
-          title="Explore Our Premium Brands"
-          linkTitle="Show All Brands"
+          title={t("brands.title")}
+          linkTitle={t("brands.showAll")}
         />
         <div className="brands-grid">
           {brands.map((brand, index) => (

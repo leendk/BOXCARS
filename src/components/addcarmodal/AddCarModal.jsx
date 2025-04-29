@@ -1,14 +1,16 @@
 import React, { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./AddCarModal.css";
 import carSell from "../../../public/background.jpg";
 import UploadFile from "../uploadFile/UploadFile";
+
 const AddCarModal = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef(null);
   const [previewUrl, setPreviewUrl] = useState(null);
-  const [formValues, setFormValues] = useState({
-    image: null,
-  });
+  const [formValues, setFormValues] = useState({ image: null });
+
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -27,6 +29,7 @@ const AddCarModal = ({ isOpen, onClose }) => {
     setFormValues((prev) => ({ ...prev, image: null }));
     if (fileInputRef.current) fileInputRef.current.value = null;
   };
+
   if (!isOpen) return null;
 
   return (
@@ -39,26 +42,24 @@ const AddCarModal = ({ isOpen, onClose }) => {
           <img
             alt="Car"
             className="draweer-img-car"
-            style={{
-              backgroundImage: `url(${carSell})`,
-            }}
+            style={{ backgroundImage: `url(${carSell})` }}
           />
-          <h2>Add a New Car</h2>
+          <h2>{t("addCarModal.header")}</h2>
         </div>
 
         <form className="car-form">
-          <label>Car Name</label>
-          <input type="text" placeholder="e.g. Mustang GT" />
+          <label>{t("addCarModal.fields.carName")}</label>
+          <input type="text" placeholder={t("addCarModal.placeholders.name")} />
 
-          <label>Brand</label>
-          <input type="text" placeholder="e.g. Ford" />
+          <label>{t("addCarModal.fields.brand")}</label>
+          <input type="text" placeholder={t("addCarModal.placeholders.brand")} />
 
-          <label>Price ($)</label>
-          <input type="number" placeholder="e.g. 30000" />
+          <label>{t("addCarModal.fields.price")}</label>
+          <input type="number" placeholder={t("addCarModal.placeholders.price")} />
 
-          <label>Category</label>
+          <label>{t("addCarModal.fields.category")}</label>
           <select>
-            <option>Select Category</option>
+            <option>{t("addCarModal.fields.selectCategory")}</option>
             <option>Sedan</option>
             <option>SUV</option>
             <option>Hatchback</option>
@@ -72,17 +73,15 @@ const AddCarModal = ({ isOpen, onClose }) => {
             handleFileChange={handleFileChange}
             fileInputRef={fileInputRef}
             handleRemoveImage={handleRemoveImage}
-            text={"Car Image"}
-            styleBtn={{
-              color: "#fff",
-            }}
+            text={t("addCarModal.fields.carImage")}
+            styleBtn={{ color: "#fff" }}
           />
 
-          <label>Description</label>
-          <textarea placeholder="Write a brief description..."></textarea>
+          <label>{t("addCarModal.fields.description")}</label>
+          <textarea placeholder={t("addCarModal.placeholders.description")}></textarea>
 
           <button onClick={onClose} className="submit-btn">
-            Submit Car
+            {t("addCarModal.submit")}
           </button>
         </form>
       </div>

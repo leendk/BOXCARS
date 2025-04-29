@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -10,49 +11,56 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <div className="container">
       <div className="hero-content">
-        <p className="subtitle">Find cars for sale and for rent near you</p>
-        <h1 className="title">Find Your Perfect Car</h1>
+        <p className="subtitle">{t("hero.subtitle")}</p>
+        <h1 className="title">{t("hero.title")}</h1>
+
         <div className="tabs">
-          <span>All</span>
-          <span>New</span>
-          <span>Used</span>
+          <span>{t("hero.tabs.all")}</span>
+          <span>{t("hero.tabs.new")}</span>
+          <span>{t("hero.tabs.used")}</span>
         </div>
+
         <div className="search-form">
           <select className="dropdown">
-            <option>Any Makes</option>
+            <option>{t("hero.filters.anyMakes")}</option>
           </select>
           <select className="dropdown">
-            <option>Any Models</option>
+            <option>{t("hero.filters.anyModels")}</option>
           </select>
           <select className="dropdown">
-            <option>Prices: All Prices</option>
+            <option>{t("hero.filters.allPrices")}</option>
           </select>
+
           <button
             className="search-button"
-            onClick={() => alert("Searching for cars...")}
+            onClick={() => alert(t("hero.searchCars"))}
           >
-            <FontAwesomeIcon icon={faSearch} /> Search Cars
+            <FontAwesomeIcon icon={faSearch} /> {t("hero.searchCars")}
           </button>
         </div>
-        <p className="browse-text">Or Browse Featured Models</p>
+
+        <p className="browse-text">{t("hero.browseFeatured")}</p>
+
         <div className="icons">
           <div className="icon-button">
-            <FontAwesomeIcon icon={faCarSide} /> SUV
+            <FontAwesomeIcon icon={faCarSide} /> {t("hero.icons.suv")}
           </div>
           <div className="icon-button">
-            <FontAwesomeIcon icon={faCar} /> Sedan
+            <FontAwesomeIcon icon={faCar} /> {t("hero.icons.sedan")}
           </div>
           <div className="icon-button">
-            <FontAwesomeIcon icon={faCarRear} /> Hatchback
+            <FontAwesomeIcon icon={faCarRear} /> {t("hero.icons.hatchback")}
           </div>
           <div className="icon-button">
-            <FontAwesomeIcon icon={faCarBurst} /> Coupe
+            <FontAwesomeIcon icon={faCarBurst} /> {t("hero.icons.coupe")}
           </div>
           <div className="icon-button">
-            <FontAwesomeIcon icon={faBolt} /> Hybrid
+            <FontAwesomeIcon icon={faBolt} /> {t("hero.icons.hybrid")}
           </div>
         </div>
       </div>

@@ -1,9 +1,18 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./AboutSection.css";
+
 function AboutSection() {
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
+
   return (
     <>
-      <section className="about-section" id="about">
+      <section
+        className="about-section"
+        id="about"
+        style={{ direction: isArabic ? "rtl" : "ltr", textAlign: isArabic ? "right" : "left" }}
+      >
         <div className="about-left">
           <div className="video-container">
             <iframe
@@ -17,42 +26,36 @@ function AboutSection() {
         </div>
 
         <div className="about-right">
-          <h1>Get A Fair Price For Your Car</h1>
-          <h2>Sell To Us Today</h2>
-          <p>
-            We are committed to providing our customers with exceptional
-            service, competitive pricing, and a wide range of:
-          </p>
+          <h1>{t("about.title1")}</h1>
+          <h2>{t("about.title2")}</h2>
+          <p>{t("about.desc")}</p>
           <ul>
-            <li>
-              We are the UK's largest provider, with more patrols in more places
-            </li>
-            <li>You get 24/7 roadside assistance</li>
-            <li>We fix 4 out of 5 cars at the roadside</li>
+            {t("about.list", { returnObjects: true }).map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
           <a href="#" className="btn">
-            Get Started ↗
+            {t("about.cta")}
           </a>
         </div>
       </section>
 
-      {/* قسم الإحصائيات خارج AboutSection ليكون دائمًا تحته */}
-      <div className="stats">
+      <div className="stats" style={{ direction: isArabic ? "rtl" : "ltr" }}>
         <div className="stat">
-          <h2>836M</h2>
-          <p>Cars For Sale</p>
+          <h2>{t("stats.values.carsForSale")}</h2>
+          <p>{t("stats.carsForSale")}</p>
         </div>
         <div className="stat">
-          <h2>738M</h2>
-          <p>Dealer Reviews</p>
+          <h2>{t("stats.values.dealerReviews")}</h2>
+          <p>{t("stats.dealerReviews")}</p>
         </div>
         <div className="stat">
-          <h2>100M</h2>
-          <p>Visitors Per Day</p>
+          <h2>{t("stats.values.visitorsPerDay")}</h2>
+          <p>{t("stats.visitorsPerDay")}</p>
         </div>
         <div className="stat">
-          <h2>238M</h2>
-          <p>Verified Dealers</p>
+          <h2>{t("stats.values.verifiedDealers")}</h2>
+          <p>{t("stats.verifiedDealers")}</p>
         </div>
       </div>
     </>

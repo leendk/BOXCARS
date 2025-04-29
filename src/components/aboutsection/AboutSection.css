@@ -1,6 +1,6 @@
 .about-section {
   display: flex;
-  align-items: stretch; /* بدل align-items: center */
+  align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
   padding: 50px;
@@ -19,9 +19,10 @@
   justify-content: center;
   text-align: start;
 }
+
 .video-container {
   width: 100%;
-  height: 100%; /* اجعل الفيديو يأخذ كامل ارتفاع النص */
+  height: 100%;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -43,7 +44,6 @@
   font-size: 2.5rem;
   margin-bottom: 10px;
   color: #1d1a1a;
-  /* تعديل */
 }
 
 .about-right h2 {
@@ -56,19 +56,17 @@
   font-size: 1.1rem;
   margin-bottom: 20px;
   color: #1d1a1a;
-  /* تعديل */
 }
 
 .about-right ul {
   list-style: none;
   margin-bottom: 30px;
   color: #1d1a1a;
-  /* تعديل */
 }
 
 .about-right ul li {
   margin-bottom: 15px;
-  padding-left: 2.5em;
+  padding-inline-start: 2.5em; /* تعديل هنا */
   position: relative;
   transition: transform 0.3s ease;
 }
@@ -80,7 +78,6 @@
 .about-right ul li::before {
   content: "✔";
   position: absolute;
-  left: 0;
   top: 3px;
   width: 24px;
   height: 24px;
@@ -93,6 +90,7 @@
   font-size: 0.9rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  inset-inline-start: 0; /* تعديل هنا */
 }
 
 .about-right ul li:hover::before {
@@ -102,7 +100,6 @@
 
 .btn {
   display: inline-block;
-  background: #003cff;
   background-color: #007bff;
   color: white;
   padding: 12px 24px;
@@ -111,6 +108,7 @@
   font-size: 1rem;
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .about-right .btn {
   width: fit-content;
   align-self: flex-start;
@@ -138,18 +136,10 @@
   animation: fadeInUp 1s ease forwards;
 }
 
-.stat:nth-child(1) {
-  animation-delay: 0.3s;
-}
-.stat:nth-child(2) {
-  animation-delay: 0.5s;
-}
-.stat:nth-child(3) {
-  animation-delay: 0.7s;
-}
-.stat:nth-child(4) {
-  animation-delay: 0.9s;
-}
+.stat:nth-child(1) { animation-delay: 0.3s; }
+.stat:nth-child(2) { animation-delay: 0.5s; }
+.stat:nth-child(3) { animation-delay: 0.7s; }
+.stat:nth-child(4) { animation-delay: 0.9s; }
 
 .stat h2 {
   font-size: 2.2rem;
@@ -174,77 +164,8 @@
   }
 }
 
-/* Responsive Navbar and Hero Adjustments */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 10px 20px;
-  }
-
-  .navbar-content {
-    gap: 20px;
-  }
-
-  .nav-actions {
-    margin-right: 40px;
-  }
-  .browse-text {
-    margin-top: 20px;
-  }
-
-  .icons {
-    margin-top: 10px;
-  }
-
-  .brands-section {
-    margin-top: -50px; /* تقليل المسافة العلوية بشكل بسيط */
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 26px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    margin-left: 20px;
-  }
-
-  .menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.95);
-    padding: 20px;
-    border-radius: 10px;
-    gap: 15px;
-    z-index: 999;
-  }
-
-  .menu.show {
-    display: flex;
-  }
-
-  .search-form {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 15px;
-    border-radius: 20px;
-    max-width: 90%;
-  }
-
-  .search-form select {
-    width: 100%;
-    min-width: unset;
-    margin-bottom: 10px;
-  }
-
-  .search-button {
-    width: 100%;
-    margin-left: 0;
-  }
-
   .about-section {
     flex-direction: column-reverse;
     padding: 20px;
@@ -254,31 +175,25 @@
   .about-right .btn {
     align-self: center;
   }
-
   .about-right h1 {
     font-size: 2rem;
   }
-
   .about-right h2 {
     font-size: 1.5rem;
   }
-
   .about-right p {
     font-size: 1rem;
   }
-
   .about-right ul {
     text-align: left;
     margin: 0 auto 30px;
     max-width: 300px;
   }
-
   .video-container {
     width: 100%;
     max-width: 350px;
     height: 350px;
   }
-
   .video-container iframe {
     width: 100%;
     height: 100%;
