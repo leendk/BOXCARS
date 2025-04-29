@@ -52,21 +52,28 @@ function Navbar({ onSubscriptionClick, onAboutClick, onBrandsClick }) {
         <button onClick={() => setIsOpen(true)} className="sign-in">
           <FontAwesomeIcon icon={faUser} /> {t("navbar.signIn")}
         </button>
-        <button onClick={onSubscriptionClick} className="submit-btn">
+        <button
+          onClick={onSubscriptionClick}
+          className="submit-btn"
+          style={{ marginTop: "0px" }}
+        >
           {t("navbar.subscription")}
         </button>
 
-        <button 
-          onClick={toggleLanguage} 
+        <button
+          onClick={toggleLanguage}
           className="lang-btn"
-          title={i18n.language === "en" ? "Switch to Arabic" : "Switch to English"}
+          title={
+            i18n.language === "en" ? "Switch to Arabic" : "Switch to English"
+          }
         >
           <FontAwesomeIcon icon={faGlobe} className="globe-icon" />
-          <span className="lang-text">{i18n.language === "en" ? "عربي" : "EN"}</span>
+          <span className="lang-text">
+            {i18n.language === "en" ? "عربي" : "EN"}
+          </span>
         </button>
       </div>
 
-      
       {isOpen && (
         <Modal step={step} setStep={setStep} onClose={() => setIsOpen(false)} />
       )}
